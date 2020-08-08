@@ -1,0 +1,19 @@
+config('GLUON_SPECIALIZE_KERNEL', true)
+
+local ATH10K_PACKAGES = {
+	'kmod-ath10k',
+	'-kmod-ath10k-ct',
+	'-kmod-ath10k-ct-smallbuffers',
+	'ath10k-firmware-qca988x',
+	'-ath10k-firmware-qca988x-ct',
+}
+
+defaults {
+	factory = false,
+}
+
+device('mikrotik-routerboard-wap-g-5hact2hnd', 'mikrotik_routerboard-wap-g-5hact2hnd', {
+	packages = ATH10K_PACKAGES,
+	class = 'tiny', -- 64M ath9k + ath10k
+	broken = true, -- no sysupgrade, 2.4 GHz mesh unstable, no LED support
+})

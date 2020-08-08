@@ -97,6 +97,9 @@ local primary_addrs = {
 			'ocedo,raccoon',
 			'tplink,archer-c2-v3',
 		}},
+		{'ath79', 'mikrotik', {
+			'mikrotik,routerboard-wap-g-5hact2hnd',
+		}};
 		{'brcm2708'},
 		{'ipq40xx', 'generic', {
 			'avm,fritzbox-4040',
