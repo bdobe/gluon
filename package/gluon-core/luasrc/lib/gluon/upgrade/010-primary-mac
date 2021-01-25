@@ -146,6 +146,10 @@ local primary_addrs = {
 			'openmesh,a42',
 			'openmesh,a62',
 		}},
+		{'ipq40xx', 'mikrotik', {
+			'mikrotik,routerboard-wap-g-5hacd2hnd',
+			'mikrotik,mikrotik_hap-ac2'
+		}},
 		{'mpc85xx', 'p1020', {
 			'aerohive,hiveap-330',
 			'ocedo,panda',

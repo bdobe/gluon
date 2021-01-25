@@ -65,6 +65,11 @@ function M.is_outdoor_device()
 		'plasmacloud,pa1200',
 	}) then
 		return true
+
+	elseif M.match('ipq40xx', 'mikrotik', {
+		'mikrotik,routerboard-wap-g-5hacd2hnd',
+	}) then
+		return true
 	end
 
 	return false
