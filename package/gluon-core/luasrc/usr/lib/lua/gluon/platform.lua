@@ -61,6 +61,7 @@ function M.is_outdoor_device()
 
 	elseif M.match('ipq40xx', 'mikrotik', {
 		'mikrotik,sxtsq-5-ac',
+		'mikrotik,wap-ac',
 	}) then
 		return true
 

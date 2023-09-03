@@ -67,6 +67,18 @@ local function label_mac()
 	end
 end
 
+local function mkt_base_mac()
+	return function()
+		local mac = read('/sys/firmware/mikrotik/hard_config/mac_base')
+
+		if mac == nil then return nil end
+
+		mac = util.trim(mac)
+		if string.len(mac) ~= 17 then return nil end
+
+		return mac
+	end
+end
 
 -- Entries are matched in the order they are listed
 local primary_addrs = {
@@ -135,6 +147,12 @@ local primary_addrs = {
 	{phy(1), {
 		{'ramips', 'mt7621', {
 			'dlink,dir-860l-b1',
+		}},
+	}},
+	-- mikrotik base-mac
+	{mkt_base_mac(), {
+		{'ipq40xx', 'mikrotik', {
+			'mikrotik,wap-ac',
 		}},
 	}},
 	-- label-mac-device default
